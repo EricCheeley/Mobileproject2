@@ -33,4 +33,14 @@
         android:layout_marginBottom="24dp"
         android:onClick="goToScreen2" />
 
+    <Button
+        android:id="@+id/generalChatButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="General Chat"
+        android:layout_above="@id/homeButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="24dp"
+        android:onClick="goToGeneralChat" />
+
 </RelativeLayout>

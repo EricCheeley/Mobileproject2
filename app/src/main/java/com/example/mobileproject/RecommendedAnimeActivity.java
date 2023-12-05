@@ -28,11 +28,19 @@ public class RecommendedAnimeActivity extends AppCompatActivity {
             titleTextView.setText(recommendedAnimeText.toString());
         }
 
-        // Adding click listener to the button and navigating to Screen 2
+        // Adding click listener to the homeButton and navigating to Screen 2
         findViewById(R.id.homeButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 goToScreen2();
+            }
+        });
+
+        // Adding click listener to the generalChatButton and navigating to Screen 6
+        findViewById(R.id.generalChatButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToScreen6();
             }
         });
     }
@@ -40,6 +48,12 @@ public class RecommendedAnimeActivity extends AppCompatActivity {
     // Function to navigate to Screen 2
     private void goToScreen2() {
         Intent intent = new Intent(this, AnimeListActivity.class);
+        startActivity(intent);
+    }
+
+    // Function to navigate to Screen 6
+    private void goToScreen6() {
+        Intent intent = new Intent(this, GeneralChatActivity.class);
         startActivity(intent);
     }
 }

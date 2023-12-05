@@ -16,6 +16,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
+import android.widget.ImageView;
 public class AnimeDetailsActivity extends AppCompatActivity {
 
     private List<String> animeList = Arrays.asList(
@@ -98,7 +99,17 @@ public class AnimeDetailsActivity extends AppCompatActivity {
         // Display description based on the selected anime
         TextView descriptionTextView = findViewById(R.id.descriptionTextView);
         descriptionTextView.setText(getAnimeDescription(selectedAnime));
+
+        // Load and display image based on the selected anime
+        ImageView animeImageView = findViewById(R.id.animeImageView);
+        int resourceId = getResources().getIdentifier(
+                selectedAnime.toLowerCase().replace(" ", "_"),
+                "drawable",
+                getPackageName()
+        );
+        animeImageView.setImageResource(resourceId);
     }
+
 
     // Method to get anime description based on the title
     private String getAnimeDescription(String animeTitle) {
@@ -130,4 +141,7 @@ public class AnimeDetailsActivity extends AppCompatActivity {
 
         return recommendedAnime;
     }
+
+
+
 }
